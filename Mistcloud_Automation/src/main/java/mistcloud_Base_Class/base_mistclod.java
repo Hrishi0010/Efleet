@@ -40,7 +40,7 @@ public class base_mistclod {
 	}
 
 	@BeforeClass
-	public void beforeClass() throws IOException {
+	public void beforeClass() throws IOException, InterruptedException {
 		String url = file_Utility.propertyFile("url");
 		String browser = file_Utility.propertyFile("browser");
 		if (browser.equals("chrome")) {
@@ -54,12 +54,14 @@ public class base_mistclod {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.get(url);
+
 //		mistcloud_Login = new Login_POM(driver);
 	}
 
 	@BeforeMethod
-	public void beforeMethod() throws IOException {
+	public void beforeMethod() throws IOException, InterruptedException {
 		System.out.println("before Method:");
+
 		mistcloud_Login = new Login_POM(driver);
 		mistcloud_Login.getUsername().sendKeys(file_Utility.propertyFile("username"));
 		mistcloud_Login.getPassword().sendKeys(file_Utility.propertyFile("password"));
@@ -72,7 +74,7 @@ public class base_mistclod {
 	}
 
 	@AfterClass
-	public void AfterClass() {
+	public void AfterClass() throws InterruptedException {
 		driver.quit();
 	}
 

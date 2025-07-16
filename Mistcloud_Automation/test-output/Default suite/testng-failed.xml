@@ -6,8 +6,8 @@
       <class name="TestScripts.tyre_Support_Master">
         <methods>
           <include name="AfterTest"/>
-          <include name="tyreSupportMaster_Mousehover"/>
           <include name="beforeSuite"/>
+          <include name="tyreSupportMaster_Mousehover"/>
           <include name="AfterSuite"/>
           <include name="beforeTest"/>
           <include name="beforeMethod"/>
