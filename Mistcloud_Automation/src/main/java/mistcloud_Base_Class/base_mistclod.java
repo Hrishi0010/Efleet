@@ -27,42 +27,47 @@ public class base_mistclod {
 	public Mistcloud_File_Utility file_Utility = new Mistcloud_File_Utility();
 	public WebDriver_Utility webdriverUtility = new WebDriver_Utility();
 	public Login_POM mistcloud_Login;
+//	public Tyre_Support_Master_POM tyreSupportMaster = new Tyre_Support_Master_POM(driver);
 	public Tyre_Support_Master_POM tyreSupportMaster;
+	
 
 	@BeforeSuite
 	public void beforeSuite() {
-		System.out.println("before suite");
+		System.out.println("=== Test Suite Started ===");
 	}
 
 	@BeforeTest
 	public void beforeTest() {
-		System.out.println("before Test");
+		System.out.println("--- Starting Tests ---");
 	}
 
 	@BeforeClass
-	public void beforeClass() throws IOException, InterruptedException {
-		String url = file_Utility.propertyFile("url");
+	public void SetUp() throws IOException, InterruptedException {
+	
 		String browser = file_Utility.propertyFile("browser");
-		if (browser.equals("chrome")) {
+		String url = file_Utility.propertyFile("url");
+		if (browser.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
-		} else if (browser.equals("firefox")) {
+		} else if (browser.equalsIgnoreCase("firefox")) {
 			driver = new FirefoxDriver();
 		} else {
 			System.out.println("please enter valid browser name:");
+			throw new IllegalArgumentException("Unsupported Browser" +browser);
 		}
 		listernerDriver = driver;
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.get(url);
 
-//		mistcloud_Login = new Login_POM(driver);
+		mistcloud_Login = new Login_POM(driver);
+		tyreSupportMaster = new Tyre_Support_Master_POM(driver);
 	}
 
 	@BeforeMethod
-	public void beforeMethod() throws IOException, InterruptedException {
-		System.out.println("before Method:");
+	public void login() throws IOException, InterruptedException {
+		System.out.println("Logging in...");
 
-		mistcloud_Login = new Login_POM(driver);
+//		mistcloud_Login = new Login_POM(driver);
 		mistcloud_Login.getUsername().sendKeys(file_Utility.propertyFile("username"));
 		mistcloud_Login.getPassword().sendKeys(file_Utility.propertyFile("password"));
 		mistcloud_Login.getLoginButton().click();
@@ -70,21 +75,24 @@ public class base_mistclod {
 
 	@AfterMethod
 	public void AfterMethod() {
-		System.out.println("After Method :");
+		System.out.println("Test completed......");
 	}
 
 	@AfterClass
-	public void AfterClass() throws InterruptedException {
-		driver.quit();
+	public void tearDown() throws InterruptedException {
+//		if (driver != null) {
+//            driver.quit();
+//            System.out.println("Browser closed....");
+//        }
 	}
 
 	@AfterTest
 	public void AfterTest() {
-		System.out.println("After Test");
+		System.out.println("--- Tests Finished ---");
 	}
 
 	@AfterSuite
 	public void AfterSuite() {
-		System.out.println("After Suit :");
+		System.out.println("=== Test Suite Finished ===");
 	}
 }

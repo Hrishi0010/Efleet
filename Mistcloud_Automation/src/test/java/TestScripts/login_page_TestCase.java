@@ -9,10 +9,11 @@ import mistcloud_Base_Class.base_mistclod;
 public class login_page_TestCase extends base_mistclod{
 	
 	@Test
-	public void login_testcase() throws IOException {
+	public void login_testcase() throws IOException, InterruptedException {
 //		mistcloud_Login.getUsername().sendKeys(file_Utility.propertyFile("username"));
 //		mistcloud_Login.getPassword().sendKeys(file_Utility.propertyFile("password"));
 //		mistcloud_Login.getLoginButton().click();
+//		Thread.sleep(10000);
 		
 	}
 

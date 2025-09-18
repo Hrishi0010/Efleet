@@ -8,6 +8,6 @@ public class tyre_Support_Master extends base_mistclod{
 	
 	@Test
 	public void tyreSupportMaster_Mousehover() {
-		webdriverUtility.mouse_Hover(driver, tyreSupportMaster.getTyreSupportMaster());
+		webdriverUtility.mouse_Hover(driver, tyreSupportMaster.getTyreBrands());
 	}
 }
