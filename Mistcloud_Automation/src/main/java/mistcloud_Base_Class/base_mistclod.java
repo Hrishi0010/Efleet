@@ -17,8 +17,12 @@ import org.testng.annotations.BeforeTest;
 
 import Genric_utility.Mistcloud_File_Utility;
 import Genric_utility.WebDriver_Utility;
+import Genric_utility.window_Handles;
 import POM_Mistcloud.Login_POM;
 import POM_Mistcloud.Tyre_Support_Master_POM;
+import POM_Mistcloud.tyreFunction_TyreStock_POM;
+import POM_Mistcloud.tyre_Function_POM;
+import POM_Mistcloud.tyre_Inward_POM;
 
 public class base_mistclod {
 
@@ -29,6 +33,10 @@ public class base_mistclod {
 	public Login_POM mistcloud_Login;
 //	public Tyre_Support_Master_POM tyreSupportMaster = new Tyre_Support_Master_POM(driver);
 	public Tyre_Support_Master_POM tyreSupportMaster;
+	public window_Handles windowHandles = new window_Handles();
+	public tyreFunction_TyreStock_POM tyreStock = new tyreFunction_TyreStock_POM(driver);
+	public tyre_Function_POM tyreFunction;
+	public tyre_Inward_POM tyreInward;
 	
 
 	@BeforeSuite
@@ -61,6 +69,9 @@ public class base_mistclod {
 
 		mistcloud_Login = new Login_POM(driver);
 		tyreSupportMaster = new Tyre_Support_Master_POM(driver);
+		tyre_Function_POM tyreFunction = new tyre_Function_POM(driver);
+		 tyre_Inward_POM tyreInward = new tyre_Inward_POM(driver);
+		 
 	}
 
 	@BeforeMethod
@@ -71,6 +82,15 @@ public class base_mistclod {
 		mistcloud_Login.getUsername().sendKeys(file_Utility.propertyFile("username"));
 		mistcloud_Login.getPassword().sendKeys(file_Utility.propertyFile("password"));
 		mistcloud_Login.getLoginButton().click();
+		
+		windowHandles.windowHandles(driver);
+		mistcloud_Login.getSearchSubscriberText().sendKeys(file_Utility.propertyFile("Fleet"));
+		mistcloud_Login.getSearchSubscriberButton().click();
+		Thread.sleep(3000);
+		mistcloud_Login.getSelectSubscriberRadioButton().click();
+		mistcloud_Login.getSubscriberSubmit_button().click();
+		
+		Thread.sleep(10000);
 	}
 
 	@AfterMethod
@@ -80,10 +100,10 @@ public class base_mistclod {
 
 	@AfterClass
 	public void tearDown() throws InterruptedException {
-//		if (driver != null) {
-//            driver.quit();
-//            System.out.println("Browser closed....");
-//        }
+		if (driver != null) {
+            driver.quit();
+            System.out.println("Browser closed....");
+        }
 	}
 
 	@AfterTest

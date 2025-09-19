@@ -16,7 +16,7 @@ public class Login_POM {
 
 	}
 
-	@FindBy(xpath = "//input[@id='userName']")
+		@FindBy(xpath = "//input[@id='userName']")
 	private WebElement username;
 
 	@FindBy(xpath = "//input[@id='password']")
@@ -25,6 +25,20 @@ public class Login_POM {
 	@FindBy(xpath = "//input[@value='Log in']")
 	private WebElement loginButton;
 
+	@FindBy(xpath = "//input[contains(@id,'subscriberListRadio')]")
+	private WebElement SelectSubscriberRadioButton;
+	
+	@FindBy(xpath = "//input[contains(@id,'Searchtext')]")
+	private WebElement searchSubscriberText;
+	
+	@FindBy(xpath = "//button[contains(@class,'btn btn-warning t')]")
+	private WebElement searchSubscriberButton;
+	
+	@FindBy(xpath = "//button[contains(text(),'Submit')]")
+	private WebElement subscriberSubmit_button;
+	
+	
+	
 	public WebElement getUsername() {
 		return username;
 	}
@@ -37,4 +51,21 @@ public class Login_POM {
 		return loginButton;
 	}
 
+	public WebElement getSelectSubscriberRadioButton() {
+		return SelectSubscriberRadioButton;
+	}
+
+	public WebElement getSearchSubscriberText() {
+		return searchSubscriberText;
+	}
+
+	public WebElement getSearchSubscriberButton() {
+		return searchSubscriberButton;
+	}
+
+	public WebElement getSubscriberSubmit_button() {
+		return subscriberSubmit_button;
+	}
+	
+	
 }

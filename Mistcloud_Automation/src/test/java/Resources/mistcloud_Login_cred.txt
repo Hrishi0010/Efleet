@@ -1,4 +1,5 @@
-url https://staging.efleetsystems.com/login
+url https://qa.efleetsystems.com/login
 browser chrome
 username jeswin
-password admin
+password qaadmin
+Fleet eFleet

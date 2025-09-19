@@ -39,8 +39,8 @@ public class WebDriver_Utility {
 //	Mouse Action
 	public void mouse_Hover(WebDriver driver, WebElement element) {
 		Actions mouse = new Actions(driver);
-		mouse.moveToElement(element);
-		mouse.perform();
+		mouse.moveToElement(element).perform();
+		
 		
 	}
 
