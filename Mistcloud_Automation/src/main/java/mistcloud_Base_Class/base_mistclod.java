@@ -34,7 +34,7 @@ public class base_mistclod {
 //	public Tyre_Support_Master_POM tyreSupportMaster = new Tyre_Support_Master_POM(driver);
 	public Tyre_Support_Master_POM tyreSupportMaster;
 	public window_Handles windowHandles = new window_Handles();
-	public tyreFunction_TyreStock_POM tyreStock = new tyreFunction_TyreStock_POM(driver);
+	public tyreFunction_TyreStock_POM tyreStock ;
 	public tyre_Function_POM tyreFunction;
 	public tyre_Inward_POM tyreInward;
 	
@@ -69,8 +69,9 @@ public class base_mistclod {
 
 		mistcloud_Login = new Login_POM(driver);
 		tyreSupportMaster = new Tyre_Support_Master_POM(driver);
-		tyre_Function_POM tyreFunction = new tyre_Function_POM(driver);
-		 tyre_Inward_POM tyreInward = new tyre_Inward_POM(driver);
+		tyreFunction = new tyre_Function_POM(driver);
+		tyreInward = new tyre_Inward_POM(driver);
+		tyreStock = new tyreFunction_TyreStock_POM(driver);
 		 
 	}
 
