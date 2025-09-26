@@ -15,11 +15,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
+import Genric_utility.Java_Utitlity;
 import Genric_utility.Mistcloud_File_Utility;
 import Genric_utility.WebDriver_Utility;
 import Genric_utility.window_Handles;
 import POM_Mistcloud.Login_POM;
 import POM_Mistcloud.Tyre_Support_Master_POM;
+import POM_Mistcloud.tyreFunction_New_New_Retread_POM;
 import POM_Mistcloud.tyreFunction_TyreStock_POM;
 import POM_Mistcloud.tyre_Function_POM;
 import POM_Mistcloud.tyre_Inward_POM;
@@ -28,6 +30,7 @@ public class base_mistclod {
 
 	public WebDriver driver;
 	public static WebDriver listernerDriver;
+	public Java_Utitlity java_utility = new Java_Utitlity();
 	public Mistcloud_File_Utility file_Utility = new Mistcloud_File_Utility();
 	public WebDriver_Utility webdriverUtility = new WebDriver_Utility();
 	public Login_POM mistcloud_Login;
@@ -37,6 +40,7 @@ public class base_mistclod {
 	public tyreFunction_TyreStock_POM tyreStock ;
 	public tyre_Function_POM tyreFunction;
 	public tyre_Inward_POM tyreInward;
+	public tyreFunction_New_New_Retread_POM new_NewRetread;
 	
 
 	@BeforeSuite
@@ -72,6 +76,7 @@ public class base_mistclod {
 		tyreFunction = new tyre_Function_POM(driver);
 		tyreInward = new tyre_Inward_POM(driver);
 		tyreStock = new tyreFunction_TyreStock_POM(driver);
+		new_NewRetread = new tyreFunction_New_New_Retread_POM(driver);
 		 
 	}
 

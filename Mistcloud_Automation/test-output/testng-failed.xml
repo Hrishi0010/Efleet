@@ -3,19 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tyre_Function.tyreStock_allTask">
+      <class name="tyre_Inward.tyreInward_new_new_Retread_GRN">
         <methods>
           <include name="AfterTest"/>
           <include name="beforeSuite"/>
           <include name="SetUp"/>
           <include name="login"/>
+          <include name="new_Retread_GRN"/>
           <include name="AfterSuite"/>
           <include name="beforeTest"/>
           <include name="AfterMethod"/>
-          <include name="clickOn_allTask"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- Tyre_Function.tyreStock_allTask -->
+      </class> <!-- tyre_Inward.tyreInward_new_new_Retread_GRN -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

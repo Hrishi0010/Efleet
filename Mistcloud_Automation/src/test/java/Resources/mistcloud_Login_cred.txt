@@ -3,3 +3,18 @@ browser chrome
 username jeswin
 password qaadmin
 Fleet eFleet
+
+//Retread field names
+retread_officeName Mumbai
+retread_vendor Ceat_Vendor
+retread_vendorOffice
+challanNumber
+retreadRemark test
+numberOfTyre 1
+tyreNumber
+tyreBrand AKN
+productionMonth 09/2025
+tyreAmount 10000
+
+
+
