@@ -7,10 +7,12 @@ import mistcloud_Base_Class.base_mistclod;
 public class tyreInward_new_new_Retread_GRN extends base_mistclod{
 	
 	@Test
-	public void new_Retread_GRN() {
+	public void new_Retread_GRN() throws InterruptedException {
 		webdriverUtility.mouse_Hover(driver, tyreInward.getTyre_Inward());
 		webdriverUtility.mouse_Hover(driver, tyreInward.getTyreInward_NewRetread_GRN());
+		//click on New/New Retread GRN
 		tyreInward.getTyreInward_NewRetread_GRN().click();
+		Thread.sleep(3000);
 	}
 
 }
