@@ -2,7 +2,6 @@ package tyre_Inward;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import mistcloud_Base_Class.base_mistclod;

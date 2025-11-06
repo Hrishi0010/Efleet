@@ -11,7 +11,7 @@ retread_vendorOffice
 challanNumber
 retreadRemark test
 numberOfTyre 1
-tyreNumber
+tyreNumber TYRE123
 tyreBrand AKN
 productionMonth 09/2025
 tyreAmount 10000

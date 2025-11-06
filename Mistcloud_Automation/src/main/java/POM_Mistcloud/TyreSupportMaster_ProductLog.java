@@ -14,7 +14,7 @@ public class TyreSupportMaster_ProductLog {
 	@FindBy(xpath = "//input[@id='typeahead-basic']")
 	private WebElement productLog_searchTextField;
 
-	@FindBy(xpath = "//button[contains(@class,'btn btn-i')]")
+	@FindBy(xpath = "//button[contains(text(),' Search ')]")
 	private WebElement productLog_searchButton;
 
 	@FindBy(xpath = "//a[contains(@class,'btn btn-p')]")
@@ -28,6 +28,13 @@ public class TyreSupportMaster_ProductLog {
 
 	@FindBy(xpath = "//i[contains(@class,'fa-tr')]")
 	private WebElement productLog_deleteButton;
+	
+	@FindBy(xpath = "//button[contains(@class,'close')]")
+	private WebElement productLog_crossButton;
+
+	public WebElement getProductLog_crossButton() {
+		return productLog_crossButton;
+	}
 
 	public WebElement getProductLog_searchTextField() {
 		return productLog_searchTextField;

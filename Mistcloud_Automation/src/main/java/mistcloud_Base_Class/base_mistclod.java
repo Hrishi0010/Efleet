@@ -20,6 +20,7 @@ import Genric_utility.Mistcloud_File_Utility;
 import Genric_utility.WebDriver_Utility;
 import Genric_utility.window_Handles;
 import POM_Mistcloud.Login_POM;
+import POM_Mistcloud.TyreSupportMaster_ProductLog;
 import POM_Mistcloud.Tyre_Support_Master_POM;
 import POM_Mistcloud.tyreFunction_New_New_Retread_POM;
 import POM_Mistcloud.tyreFunction_TyreStock_POM;
@@ -36,6 +37,7 @@ public class base_mistclod {
 	public Login_POM mistcloud_Login;
 //	public Tyre_Support_Master_POM tyreSupportMaster = new Tyre_Support_Master_POM(driver);
 	public Tyre_Support_Master_POM tyreSupportMaster;
+	public TyreSupportMaster_ProductLog productLog;
 	public window_Handles windowHandles = new window_Handles();
 	public tyreFunction_TyreStock_POM tyreStock ;
 	public tyre_Function_POM tyreFunction;
@@ -77,6 +79,7 @@ public class base_mistclod {
 		tyreInward = new tyre_Inward_POM(driver);
 		tyreStock = new tyreFunction_TyreStock_POM(driver);
 		new_NewRetread = new tyreFunction_New_New_Retread_POM(driver);
+		productLog = new TyreSupportMaster_ProductLog(driver);
 		 
 	}
 
